@@ -1,0 +1,31 @@
+{
+  "builds": [
+    {
+      "src": "wordpress/**",
+      "use": "@vercel/php",
+      "config": {
+        "indexDocument": "index.php"
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/wordpress/index.php" }
+  ],
+  "env": {
+    "WP_ENVIRONMENT_TYPE": "production",
+    "DB_HOST": "@db_host",
+    "DB_NAME": "@db_name",
+    "DB_USER": "@db_user",
+    "DB_PASSWORD": "@db_password"
+  },
+  "functions": {
+    "wordpress/wp-admin/**/*.php": {
+      "memory": 256,
+      "maxDuration": 30
+    },
+    "wordpress/wp-includes/**/*.php": {
+      "memory": 256,
+      "maxDuration": 30
+    }
+  }
+}

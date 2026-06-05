@@ -1,0 +1,35 @@
+# WordPress
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/cache/
+wordpress/wp-content/debug.log
+wordpress/wp-content/database/*.db
+wordpress/wp-content/database/*.db-journal
+wordpress/wp-content/database/*.sql
+
+# System
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS junk
+*~
+~$*
+
+# PHP
+*.log
+
+# Env
+.env
+.env.local
+
+# Binaries (too large for git)
+php/
+mysql-data/
+my.ini
