@@ -1,15 +1,15 @@
 {
-  "builds": [
-    {
-      "src": "wordpress/**",
-      "use": "@vercel/php",
-      "config": {
-        "indexDocument": "index.php"
-      }
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
     }
-  ],
+  },
   "routes": [
-    { "src": "/(.*)", "dest": "/wordpress/index.php" }
+    { "src": "/wordpress/wp-content/(.*)", "dest": "/wordpress/wp-content/$1" },
+    { "src": "/wordpress/wp-includes/(.*)", "dest": "/wordpress/wp-includes/$1" },
+    { "src": "/wordpress/wp-admin/(.*)", "dest": "/wordpress/wp-admin/$1" },
+    { "src": "/wordpress/(.*\\.(?:js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))", "dest": "/wordpress/$1" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ],
   "env": {
     "WP_ENVIRONMENT_TYPE": "production"
