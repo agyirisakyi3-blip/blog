@@ -12,10 +12,6 @@
     { "src": "/(.*)", "dest": "/wordpress/index.php" }
   ],
   "env": {
-    "WP_ENVIRONMENT_TYPE": "production",
-    "DB_HOST": "@db_host",
-    "DB_NAME": "@db_name",
-    "DB_USER": "@db_user",
-    "DB_PASSWORD": "@db_password"
+    "WP_ENVIRONMENT_TYPE": "production"
   }
 }
